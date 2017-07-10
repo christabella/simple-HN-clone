@@ -12,11 +12,13 @@ module.exports = class Topics {
   /** Add topic
    *  @param {string} topicString: string of < 255 chars
    *  @param {int} votes [optional, default=0]: number of votes for this topic
+   *  @return {Topic}: topic added
    */
   addTopic(topicString, votes=0) {
     let topic = new Topic(topicString.substring(0,255), this.id, votes=votes);
     this.topics.push(topic);
     this.id += 1;
+    return topic;
   }
 
   /** Increments or decrements votes for topic.
