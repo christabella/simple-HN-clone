@@ -17,16 +17,15 @@
     </div>
 
     <div id="navMenu" class="navbar-menu">
-      <div class="navbar-end">
-        
+      <div class="navbar-end"> 
         <div class="navbar-item">
           <p class="control">
-            <a class="button is-primary" href="https://github.com/jgthms/bulma/archive/0.4.3.zip">
+            <nuxt-link class="button is-primary" to="/submit">
               <span class="icon">
                 <i class="fa fa-pencil-square-o"></i>
               </span>
               <span>Submit topic</span>
-            </a>
+            </nuxt-link>
           </p>
         </div>
       </div>
