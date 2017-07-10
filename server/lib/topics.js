@@ -39,7 +39,6 @@ module.exports = class Topics {
    */
   voteOnTopic(id, vote) {
     // Find and modify topic of that id
-    this.topics[id].votes += vote;
-
+    this.topics[id].votes = parseInt(this.topics[id].votes, 10) + parseInt(vote, 10);
   }
 }
