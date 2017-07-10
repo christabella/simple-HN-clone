@@ -10,6 +10,7 @@
   "author": "Christabella Irwanto",
   "license": "ISC",
   "dependencies": {
+    "collections": "^5.0.6",
     "express": "^4.15.3"
   },
   "devDependencies": {
