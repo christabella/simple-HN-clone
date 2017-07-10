@@ -39,12 +39,12 @@
       <div v-for="topic in topics" class="box topic is-fullwidth">
         <article class="media">
           <div class="media-left">
-            <a class="upvote" href="#" @click="vote(1)">
+            <a class="upvote" href="#" @click="vote(topic.id, 1)">
               <span class="icon is-medium">
                 <i class="fa fa-chevron-up" aria-hidden="true"></i>
               </span>
             </a>
-            <a class="" href="#"  @click="vote(-1)">
+            <a class="" href="#"  @click="vote(topic.id, -1)">
               <span class="icon is-medium">
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
               </span>
@@ -74,11 +74,26 @@
 
  export default {
    components: {
-     Logo
    },
    async asyncData () {
      let { data } = await axios.get('http://localhost:8080/topics')
      return { topics: data }
+   },
+   methods: {
+     vote (id, vote) {
+       console.log(this.topics)
+       var _this = this
+       axios.put(`http://localhost:8080/topics/${id}/${vote}`)
+            .then(() =>
+              axios.get('http://localhost:8080/topics').then(
+                function (data) {
+                  _this.topics = data.data
+                })
+            )
+            .catch(function (res) {
+              alert(res)
+            })
+     }
    }
  }
 </script>
