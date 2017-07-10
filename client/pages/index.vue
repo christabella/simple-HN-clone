@@ -11,7 +11,7 @@
                 <i class="fa fa-chevron-up" aria-hidden="true"></i>
               </span>
             </a>
-            <a class="" href="#"  @click="vote(topic.id, -1)">
+            <a href="#" @click="vote(topic.id, -1)">
               <span class="icon is-medium">
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
               </span>
@@ -25,7 +25,7 @@
           <nav class="level is-mobile">
             <div class="level-left">
               <a class="level-item">
-                <span class="">{{ topic.votes }} votes</span>
+                <span>{{ topic.votes }} votes</span>
               </a>
             </div>
           </nav>
