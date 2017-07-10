@@ -6,7 +6,8 @@
   "private": true,
   "dependencies": {
     "@nuxtjs/bulma": "^1.0.1",
-    "nuxt": "latest"
+    "axios": "^0.16.2",
+    "nuxt": "^1.0.0-alpha.5"
   },
   "scripts": {
     "dev": "nuxt",
