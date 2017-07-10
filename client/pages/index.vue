@@ -32,7 +32,6 @@
         </article>
       </div>
     </div>
-
   </section>
 </template>
 
