@@ -9,7 +9,7 @@ describe("Topics model", function() {
       topics.addTopic('Hello World!');
 
       let topicsList = topics.listTopics();
-      expect(topicsList).to.deep.equal([new Topic('Hello World!')]);
+      expect(topicsList).to.deep.equal([new Topic('Hello World!', 0)]);
     });
     
     it("lists 20 topics", function() {
@@ -20,7 +20,7 @@ describe("Topics model", function() {
       }
       
       let topicsList = topics.listTopics();
-      expect(topicsList).length.to.equal(20);
+      expect(topicsList.length).to.equal(20);
     });
 
     it("lists topics in order", function() {
