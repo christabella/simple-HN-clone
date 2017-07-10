@@ -37,6 +37,7 @@ module.exports = {
     }
   },
   modules: [
-    '@nuxtjs/bulma'
+    '@nuxtjs/bulma',
+    '@nuxtjs/font-awesome'
   ]
 }
