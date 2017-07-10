@@ -5,6 +5,7 @@
   "author": "Christabella Irwanto <christabella.irwanto@gmail.com>",
   "private": true,
   "dependencies": {
+    "@nuxtjs/bulma": "^1.0.1",
     "nuxt": "latest"
   },
   "scripts": {
