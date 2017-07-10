@@ -40,6 +40,10 @@
    },
    methods: {
      submit (topic) {
+<<<<<<< HEAD
+=======
+       //       var _this = thi
+>>>>>>> a925b5801f6f568bde7d8904e3af410d4eed87de
        console.log(JSON.stringify({topic: topic}))
        var params = new URLSearchParams()
        params.append('topic', topic)
