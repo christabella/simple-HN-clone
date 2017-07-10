@@ -1,51 +1,43 @@
 'use strict';
 
 const Topic = require('./topic.js')
-var SortedSet = require("collections/sorted-set");
 
-class Topics {
-  // module.exports = class Topics {
+module.exports = class Topics {
   constructor() {
-    let compare = function(a, b) {
-      return a.votes - b.votes
-    }
-    let equals = function(a, b) {
-      return a.id == b.id;
-    } 
-    this.topics = new SortedSet([], equals, compare);
+    // Keep this.topics ordered by id for O(1) lookup when voting
+    this.topics = [];
     this.id = 0;
   }
-
+  
+  /** Add topic
+   *  @param {string} topicString: string of < 255 chars
+   *  @param {int} votes [optional, default=0]: number of votes for this topic
+   */
   addTopic(topicString, votes=0) {
-    let topic = new Topic(topicString, this.id, votes=votes);
-    this.topics.add(topic);
+    let topic = new Topic(topicString.substring(0,255), this.id, votes=votes);
+    this.topics.push(topic);
     this.id += 1;
   }
 
+  /** Increments or decrements votes for topic.
+   *  @return {Topic[]} list of up to 20 of the highest voted topics
+   */
   listTopics() {
-    let results = []
+    // Create a copy of topics array and sort from highest votes to lowest
+    let topicsCopy = this.topics.concat().sort(function(a,b) {return b.votes - a.votes})
+    // Return up to 20 of the highest voted topics
     let length = this.topics.length < 20 ? this.topics.length : 20;
-
-    for (let i = 0; i < length; i++) {
-      results.push(this.topics.pop());
-    }
-    for (let i = 0; i < length; i++) {
-      this.topics.add(results[i]);
-    }
-    return results;
+    return topicsCopy.slice(0, length);
   }
 
+  /** Increments or decrements votes for topic.
+   *  @param {int} id: id of topic to vote on
+   *  @param {int} vote: 1 (upvote) or -1 (downvote)
+   *  @return {Topic[]} list of up to 20 of the highest voted topics
+   */
   voteOnTopic(id, vote) {
-    let equals = function(a, b) {
-      return a.id == b.id;
-    } 
-    // Find and remove topic of that id
-    let topic = this.topics.get({id: id})
-    this.topics.delete(topic);
-    // Modify vote of topic
-    topic.value.votes += vote;
-    // Re-insert into priority queue
-    this.topics.add(topic.value);
-    return
+    // Find and modify topic of that id
+    this.topics[id].votes += vote;
+
   }
 }

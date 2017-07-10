@@ -9,7 +9,7 @@
 For an actual HN app, a database or data store. Reddit uses Solr.
 For this simple clone, with k=20, I can think of 2 more efficient methods:
 ### 1. Sorting everytime homepage is requested O(n log n)
-Not feasible when n is large
+Not feasible when n is large, but for this clone n will not get large enough for this to matter.
 
 ### 2. Tree/heap
 Insertion into tree/heap and removal everytime topic is upvoted... 
@@ -18,7 +18,7 @@ Insertion into tree/heap and removal everytime topic is upvoted...
 Extracting k highest nodes O(k log n) or actually even O(k * 1) everytime homepage is requested.
 
 ### Actual Implementation 
-I'll be using [this package called dsjslib](https://github.com/monmohan/dsjslib).
+Sort array upon display of top 20, with JavaScript Array.prototype.sort().
 
 # Project Structure
 The project is separated into `./client`, which contains the Nuxt.js app, and `./server`, which contains the Express REST API. Refer to the README's in the respective subfolders for details pertaining to each part.
