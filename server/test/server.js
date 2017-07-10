@@ -27,14 +27,15 @@ describe('HN Clone API', () => {
         topic: "Hello World"
       }
       chai.request(server)
-        .post('/topic')
+        .post('/topics')
         .send(topic)
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
           res.body.should.have.property('message').eql('Topic successfully submitted!');
-          res.body.book.should.have.property('id');
-          res.body.book.should.have.property('topic');
+          res.body.topic.should.have.property('id');
+          res.body.topic.should.have.property('votes');
+          res.body.topic.should.have.property('topic');
           done();
         });
     });
