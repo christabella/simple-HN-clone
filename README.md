@@ -24,4 +24,4 @@ Sort array upon display of top 20, with JavaScript Array.prototype.sort().
 The project is separated into `./client`, which contains the Nuxt.js app, and `./server`, which contains the Express REST API. Refer to the README's in the respective subfolders for details pertaining to each part.
 
 # Hosting
-`nuxt generate`'d static site hosted with Netlify, and Express app hosted with Heroku.
+[Nuxt.js app](https://simple-hn-app.herokuapp.com/) and [Express app](https://simple-hn-api.herokuapp.com/) hosted with Heroku.
