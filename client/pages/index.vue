@@ -66,13 +66,14 @@
 </script>
 
 <style>
- .container {
-   margin: 10px;
- }
- .topic {
-   margin-bottom: 0.5rem !important;
-   margin-left: 10rem;
-   margin-right: 10rem;
+ @media only screen and (min-width : 1224px) {
+   .container {
+     margin: 10px;
+   }
+   .topic {
+     margin-left: 10rem;
+     margin-right: 10rem;
+   }
  }
  .topics-container {
    margin-top: 1rem;
@@ -80,7 +81,12 @@
  .topic-content {
    word-break: break-word;
    width: 98%
- } 
+ }
+ .topic {
+   margin-left: 1rem;
+   margin-right: 1rem;
+   margin-bottom: 0.5rem !important;
+ }
  html {
    background-color: whitesmoke;
  }
