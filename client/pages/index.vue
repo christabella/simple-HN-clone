@@ -18,8 +18,8 @@
             </a>
           </div>
           <div class="media-content">
-            <div class="content">
-              {{ topic.topic }}
+            <div class="content topic-content">
+                {{ topic.topic }}
             </div>
           </div>
           <nav class="level is-mobile">
@@ -76,6 +76,10 @@
  }
  .topics-container {
    margin-top: 1rem;
+ }
+ .topic-content {
+   word-break: break-word;
+   width: 98%
  } 
  html {
    background-color: whitesmoke;
