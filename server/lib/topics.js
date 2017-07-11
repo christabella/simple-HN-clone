@@ -2,10 +2,12 @@
 
 const Topic = require('./topic.js')
 
+/** Class representing a collection of all topics. **/
 module.exports = class Topics {
   constructor() {
     // Keep this.topics ordered by id for O(1) lookup when voting
     this.topics = [];
+    // Keep track of unique id for each topic, beginning with 0.
     this.id = 0;
   }
   

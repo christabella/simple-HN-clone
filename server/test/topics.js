@@ -1,4 +1,4 @@
-const expect    = require("chai").expect;
+const expect = require("chai").expect;
 const Topics = require("../lib/topics.js");
 const Topic = require("../lib/topic.js");
 
