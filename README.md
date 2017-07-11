@@ -21,7 +21,7 @@ Extracting k highest nodes O(k log n) or actually even O(k * 1) everytime homepa
 Sort array upon display of top 20, with JavaScript Array.prototype.sort().
 
 # Project Structure
-The project is separated into `./client`, which contains the Nuxt.js app, and `./server`, which contains the Express REST API. Refer to the README's in the respective subfolders for details pertaining to each part.
+The project is separated into `./client`, which contains a Nuxt.js (framework for SSR Vue.js apps) app, and `./server`, which contains a Express REST API. Refer to the README's in the respective subfolders for details pertaining to each part.
 
 # Hosting
 [Nuxt.js app](https://simple-hn-app.herokuapp.com/) and [Express app](https://simple-hn-api.herokuapp.com/) hosted with Heroku.
