@@ -1,4 +1,6 @@
 # Simple HN Clone
+## Demo
+http://simple-hn-app.herokuapp.com/
 ## Functional requirements
 - Maintain a list of topics and its upvotes/downvotes
 - Allow the user to submit topics (string of <= 255 chars).
